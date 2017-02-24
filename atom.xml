@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Alexyzc/"/>
-  <updated>2017-02-24T07:03:23.071Z</updated>
+  <updated>2017-02-24T09:35:58.111Z</updated>
   <id>https://github.com/Alexyzc/</id>
   
   <author>
@@ -14,6 +14,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android系统架构简述</title>
+    <link href="https://github.com/Alexyzc/2017/02/24/Android%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/"/>
+    <id>https://github.com/Alexyzc/2017/02/24/Android系统架构/</id>
+    <published>2017-02-24T07:55:53.713Z</published>
+    <updated>2017-02-24T09:35:58.111Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、开篇"><a href="#一、开篇" class="headerlink" title="一、开篇"></a>一、开篇</h2><p>Android系统其底层基于Linux操作系统为基础，上层采用Java和Native层。它们是通过系统调用Syscall连通系统的内核空间和用户空间。</p>
+<h2 id="二、Android架构"><a href="#二、Android架构" class="headerlink" title="二、Android架构"></a>二、Android架构</h2><h4 id="系统启动流程"><a href="#系统启动流程" class="headerlink" title="系统启动流程"></a>系统启动流程</h4><blockquote>
+<p>Andorid系统启动过程：Loader—&gt;Kernel—&gt;Native—&gt;Native—&gt;Framework—&gt;App</p>
+</blockquote>
+<a id="more"></a>
+<h5 id="Loader层？"><a href="#Loader层？" class="headerlink" title="Loader层？"></a>Loader层？</h5><ul>
+<li>Boot Rom:当手机处于关机状态时，长按Power键开机，引导芯片开始从固化在ROM里的预设出代码开始执行，然后加载引导程序到RAM；</li>
+<li>Boot Loader：这是启动Android系统之前的引导程序，主要是检查RAM，初始化硬件参数等功能。</li>
+</ul>
+<h5 id="Kernel层"><a href="#Kernel层" class="headerlink" title="Kernel层?"></a>Kernel层?</h5><ul>
+<li>启动Kernel的swapper进程(pid=0)：该进程又称为idle进程, 系统初始化过程Kernel由无到有开创的第一个进程, 用于初始化进程管理、内存管理，加载Display,Camera Driver，Binder Driver等相关工作；</li>
+<li>启动kthreadd进程（pid=2）：是Linux系统的内核进程，会创建内核工作线程kworkder，软中断线程ksoftirqd，thermal等内核守护进程。kthreadd进程是所有内核进程的鼻祖。</li>
+</ul>
+<h5 id="Native层"><a href="#Native层" class="headerlink" title="Native层"></a>Native层</h5><ul>
+<li>init进程会孵化出ueventd、logd、healthd、installd、adbd、lmkd等用户守护进程；</li>
+<li>init进程还启动servicemanager(binder服务管家)、bootanim(开机动画)等重要服务</li>
+<li>init进程孵化出Zygote进程，Zygote进程是Android系统的第一个Java进程，Zygote是所有Java进程的父进程，Zygote进程本身是由init进程孵化而来的。<blockquote>
+<p>Native层主要包括init孵化来的用户空间的守护进程、HAL层以及开机动画等。启动init进程(pid=1),是Linux系统的用户进程，init进程是所有用户进程的鼻祖</p>
+</blockquote>
+</li>
+</ul>
+<h6 id="Framework层"><a href="#Framework层" class="headerlink" title="Framework层"></a>Framework层</h6><ul>
+<li><p>Zygote进程，是由init进程通过解析init.rc文件后fork生成的，Zygote进程主要包含</p>
+<ul>
+<li>加载ZygoteInit类，注册Zygote Socket服务端套接字；</li>
+<li>加载虚拟机；</li>
+<li>preloadClasses；</li>
+<li>preloadResouces;</li>
+</ul>
+</li>
+<li>System Server进程，是由Zygote进程fork而来，System Server是Zygote孵化的第一个进程，System Server负责启动和管理整个Java framework，包含ActivityManager，PowerManager等服务。</li>
+<li>Media Server进程，是由init进程fork而来，负责启动和管理整个C++ framework，包含AudioFlinger，Camera Service，等服务。</li>
+</ul>
+<h5 id="App层？"><a href="#App层？" class="headerlink" title="App层？"></a>App层？</h5><ul>
+<li>Zygote进程孵化出的第一个App进程是Launcher，这是用户看到的桌面App；</li>
+<li>Zygote进程还会创建Browser，Phone，Email等App进程，每个App至少运行在一个进程上</li>
+<li>所有的App进程都是由Zygote进程fork生成的</li>
+</ul>
+<h5 id="Syscall-amp-amp-JNI"><a href="#Syscall-amp-amp-JNI" class="headerlink" title="Syscall &amp;&amp; JNI?"></a>Syscall &amp;&amp; JNI?</h5><ul>
+<li>Native与Kernel之间有一层系统调用(SysCall)层</li>
+<li>Java层与Native(C/C++)层之间的纽带JNI</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、开篇&quot;&gt;&lt;a href=&quot;#一、开篇&quot; class=&quot;headerlink&quot; title=&quot;一、开篇&quot;&gt;&lt;/a&gt;一、开篇&lt;/h2&gt;&lt;p&gt;Android系统其底层基于Linux操作系统为基础，上层采用Java和Native层。它们是通过系统调用Syscall连通系统的内核空间和用户空间。&lt;/p&gt;
+&lt;h2 id=&quot;二、Android架构&quot;&gt;&lt;a href=&quot;#二、Android架构&quot; class=&quot;headerlink&quot; title=&quot;二、Android架构&quot;&gt;&lt;/a&gt;二、Android架构&lt;/h2&gt;&lt;h4 id=&quot;系统启动流程&quot;&gt;&lt;a href=&quot;#系统启动流程&quot; class=&quot;headerlink&quot; title=&quot;系统启动流程&quot;&gt;&lt;/a&gt;系统启动流程&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;Native—&amp;gt;Framework—&amp;gt;App&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://github.com/Alexyzc/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="https://github.com/Alexyzc/tags/Android/"/>
+    
+      <category term="Loader层" scheme="https://github.com/Alexyzc/tags/Loader%E5%B1%82/"/>
+    
+      <category term="Kernel层" scheme="https://github.com/Alexyzc/tags/Kernel%E5%B1%82/"/>
+    
+      <category term="Native层" scheme="https://github.com/Alexyzc/tags/Native%E5%B1%82/"/>
+    
+      <category term="FrameWork层" scheme="https://github.com/Alexyzc/tags/FrameWork%E5%B1%82/"/>
+    
+      <category term="App层" scheme="https://github.com/Alexyzc/tags/App%E5%B1%82/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
