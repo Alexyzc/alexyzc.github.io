@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>https://github.com/Alexyzc/2017/03/07/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%80%E8%BF%B0/</loc>
+    <lastmod>2017-03-07T10:03:15.020Z</lastmod>
+    <data>
+        <display>
+        <title>Activity生命周期简述</title>
+        <pubTime>2017-03-07T09:42:00.454Z</pubTime>
+        
+        <tag>startActivity</tag>
+         
+        <tag>RESUME_ACTIVITY</tag>
+         
+        <tag>PAUSE_ACTIVITY</tag>
+         
+        <tag>STOP_ACTIVITY</tag>
+         
+        <tag>DESTROY_ACTIVITY</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://github.com/Alexyzc/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://github.com/Alexyzc/2017/03/06/Java%E4%B9%8B%E5%B0%81%E8%A3%85%E6%80%9D%E6%83%B3/</loc>
+    <lastmod>2017-03-06T10:05:52.170Z</lastmod>
+    <data>
+        <display>
+        <title>Java之封装思想</title>
+        <pubTime>2017-03-06T08:56:16.994Z</pubTime>
+        
+        <tag>JAVA</tag>
+         
+        <tag>封装思想</tag>
+         
+        <tag>继承思想</tag>
+         
+        <tag>多态思想</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://github.com/Alexyzc/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://github.com/Alexyzc/2017/02/24/Android%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2017-02-24T09:35:58.111Z</lastmod>
     <data>
