@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Alexyzc/"/>
-  <updated>2017-03-07T17:03:58.063Z</updated>
+  <updated>2017-03-07T17:11:04.781Z</updated>
   <id>https://github.com/Alexyzc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://github.com/Alexyzc/2017/03/08/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/"/>
     <id>https://github.com/Alexyzc/2017/03/08/测试开发/</id>
     <published>2017-03-07T16:57:14.666Z</published>
-    <updated>2017-03-07T17:03:58.063Z</updated>
+    <updated>2017-03-07T17:11:04.781Z</updated>
     
     <content type="html"><![CDATA[<h2 id="一、开篇"><a href="#一、开篇" class="headerlink" title="一、开篇"></a>一、开篇</h2><ul>
 <li>概念</li>
@@ -41,7 +41,7 @@
     
     </summary>
     
-      <category term="测试开发" scheme="https://github.com/Alexyzc/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/"/>
+      <category term="test_development" scheme="https://github.com/Alexyzc/categories/test-development/"/>
     
     
       <category term="Jetty" scheme="https://github.com/Alexyzc/tags/Jetty/"/>
