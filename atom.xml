@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Alexyzc/"/>
-  <updated>2017-03-07T16:54:50.978Z</updated>
+  <updated>2017-03-07T17:03:58.063Z</updated>
   <id>https://github.com/Alexyzc/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MockServer</title>
+    <link href="https://github.com/Alexyzc/2017/03/08/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/"/>
+    <id>https://github.com/Alexyzc/2017/03/08/测试开发/</id>
+    <published>2017-03-07T16:57:14.666Z</published>
+    <updated>2017-03-07T17:03:58.063Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、开篇"><a href="#一、开篇" class="headerlink" title="一、开篇"></a>一、开篇</h2><ul>
+<li>概念</li>
+<li>如何配置</li>
+<li>${}</li>
+</ul>
+<p><a href="http://www.eclipse.org/jetty/documentation/current/index.html" target="_blank" rel="external">jetty</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、开篇&quot;&gt;&lt;a href=&quot;#一、开篇&quot; class=&quot;headerlink&quot; title=&quot;一、开篇&quot;&gt;&lt;/a&gt;一、开篇&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;概念&lt;/li&gt;
+&lt;li&gt;如何配置&lt;/li&gt;
+&lt;li&gt;${}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;htt
+    
+    </summary>
+    
+      <category term="测试开发" scheme="https://github.com/Alexyzc/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Jetty" scheme="https://github.com/Alexyzc/tags/Jetty/"/>
+    
+      <category term="Servlet" scheme="https://github.com/Alexyzc/tags/Servlet/"/>
+    
+      <category term="Connectors" scheme="https://github.com/Alexyzc/tags/Connectors/"/>
+    
+      <category term="Handlers" scheme="https://github.com/Alexyzc/tags/Handlers/"/>
+    
+  </entry>
   
   <entry>
     <title>Python常用模块处理</title>
