@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Alexyzc/"/>
-  <updated>2017-03-07T14:11:39.186Z</updated>
+  <updated>2017-03-07T14:13:48.518Z</updated>
   <id>https://github.com/Alexyzc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://github.com/Alexyzc/2017/03/07/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%80%E8%BF%B0/"/>
     <id>https://github.com/Alexyzc/2017/03/07/Activity生命周期简述/</id>
     <published>2017-03-07T09:42:00.454Z</published>
-    <updated>2017-03-07T14:11:39.186Z</updated>
+    <updated>2017-03-07T14:13:48.518Z</updated>
     
     <content type="html"><![CDATA[<h2 id="一、开篇"><a href="#一、开篇" class="headerlink" title="一、开篇"></a>一、开篇</h2><p>Android生命周期中，Acitivity保持长时间不变的状态,过渡状态(暂时状态)包括：onCreate()，onStart()操作后很快调用onResume()方法</p>
 <ul>
