@@ -1,0 +1,1159 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="邮件处理,日志模块,pdf处理,md5处理,mongodb索引和聚合,excel读写," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="风轻云淡" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一、开篇
+邮件模块
+Excel处理模块
+日志模块
+PDF模块
+MD5处理
+mongodb索引和聚合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python常用模块处理">
+<meta property="og:url" content="https://github.com/Alexyzc/2017/03/07/Python/index.html">
+<meta property="og:site_name" content="风轻云淡">
+<meta property="og:description" content="一、开篇
+邮件模块
+Excel处理模块
+日志模块
+PDF模块
+MD5处理
+mongodb索引和聚合">
+<meta property="og:image" content="http://omfuwekil.bkt.clouddn.com/qq_email.jpg">
+<meta property="og:image" content="https://pythonguidecn.readthedocs.io/zh/latest/writing/logging.html">
+<meta property="og:image" content="http://omfuwekil.bkt.clouddn.com/t_excel.jpg">
+<meta property="og:updated_time" content="2017-03-07T16:49:56.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python常用模块处理">
+<meta name="twitter:description" content="一、开篇
+邮件模块
+Excel处理模块
+日志模块
+PDF模块
+MD5处理
+mongodb索引和聚合">
+<meta name="twitter:image" content="http://omfuwekil.bkt.clouddn.com/qq_email.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6390205865449752000',
+      author: 'Alexyzc'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/Alexyzc/2017/03/07/Python/"/>
+
+
+
+
+
+  <title> Python常用模块处理 | 风轻云淡 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9e43089cd8aab20a18eb6d7740918adc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风轻云淡</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Goals determine what you are going to be</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Alexyzc/2017/03/07/Python/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="风轻云淡">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="风轻云淡">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="风轻云淡" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python常用模块处理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T22:26:37+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/07/Python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/07/Python/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、开篇"><a href="#一、开篇" class="headerlink" title="一、开篇"></a>一、开篇</h2><ul>
+<li>邮件模块</li>
+<li>Excel处理模块</li>
+<li>日志模块</li>
+<li>PDF模块</li>
+<li>MD5处理</li>
+<li>mongodb索引和聚合</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>邮件模块：<br>  此处邮件模块处理是程序运行中希望将程序运行的日志信息或者错误捕获信息发送给指定的收件人，通过邮件可以了解程序运行的状态或者出错信息。</p>
+<ul>
+<li>发送邮件需求的模块<ul>
+<li>smtplib</li>
+<li>email</li>
+</ul>
+</li>
+<li>发送邮件需求的步骤<ul>
+<li>email 构造邮件</li>
+<li>smtplib 协议发送邮件</li>
+</ul>
+</li>
+<li>邮件发送主要涉及SMTP协议, 接收主要涉及POP 协议、IMAP协议</li>
+<li><p>邮件基本包含哪些基础的东西,以QQ邮箱为例:<br><img src="http://omfuwekil.bkt.clouddn.com/qq_email.jpg" alt="qq_email"></p>
+<ul>
+<li>收件人</li>
+<li>发件人</li>
+<li>邮件主题</li>
+<li>邮件正文</li>
+<li>邮件附件</li>
+<li><p>实例代码一：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">import email</div><div class="line">from email.mime.text import MIMEText</div><div class="line">import smtplib</div><div class="line">from email.header import Header</div><div class="line"></div><div class="line"># 构造邮件信息</div><div class="line">msg = MIMEText(&apos;这是python自动脚本邮件信息。&apos;, &apos;plain&apos;, &apos;utf-8&apos;) # 邮件正文</div><div class="line"># QQ发给公司： 多了这步 server.starttls()</div><div class="line">from_addr = &quot;xxx@foxmail.com&quot; # 发件人</div><div class="line">password = &quot;****&quot; # 发件人邮箱密码</div><div class="line">smtp_server = &quot;smtp.qq.com&quot;  # SMTP 服务器地址</div><div class="line">port = 587  # SMTP 服务器端口</div><div class="line">to_addr = &quot;paul.xie@chinascope.com&quot;  # 收件人</div><div class="line"></div><div class="line">msg[&quot;From&quot;] = Header(&quot;Python_Tester&lt;&#123;&#125;&gt;&quot;.format(from_addr))  # 显示的邮件发件人</div><div class="line">msg[&quot;To&quot;] = Header(&quot;admin&lt;&#123;&#125;&gt;&quot;.format(to_addr))</div><div class="line">msg[&quot;Subject&quot;] = Header(&quot;from Python_Tester Test&quot;, &quot;utf-8&quot;)  # 邮件主题</div><div class="line"></div><div class="line"># 发送邮件 </div><div class="line">server = smtplib.SMTP(smtp_server, port)</div><div class="line">server.starttls()</div><div class="line">server.set_debuglevel(1)</div><div class="line">server.login(from_addr, password=password)</div><div class="line">server.sendmail(from_addr, [to_addr], msg=msg.as_string())</div><div class="line">server.quit()</div></pre></td></tr></table></figure>
+</li>
+<li><p>实例代码二：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> # 使用yagmail 第三方模块</div><div class="line"> import yagmail</div><div class="line"> # 设置发送人信息及SMTP服务器和端口</div><div class="line"> yag = yagmail.SMTP(</div><div class="line">user=&quot;xxx@foxmail.com&quot;,</div><div class="line">password=&quot;****&quot;,</div><div class="line">host=&quot;smtp.qq.com&quot;,</div><div class="line">port=&quot;587&quot;</div><div class="line"> )</div><div class="line"> </div><div class="line"> contents = u&quot;系统提醒,您有错误信息发生。&quot;</div><div class="line"> yag.send(to=[&quot;xxx@outlook.com&quot;,&quot;xxx@qq.com&quot;], subject=&quot;yagmail&quot;, contents=contents)</div><div class="line"> </div><div class="line"> # 参数说明</div><div class="line"> &apos;&apos;&apos;</div><div class="line"> to : 收件人，可以接受一个list 发送至多人</div><div class="line"> subject: 邮件主题</div><div class="line"> contents: 邮件正文，默认是文本信息，其实还可以接收各种常见的文件比如，*.jpg, *.docx, *.pdf ，*.html 等信息，只需要设置完整路径，或者同一目录下文件名称即可。</div><div class="line"> &apos;&apos;&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>日志模块：<br>详见<img src="https://pythonguidecn.readthedocs.io/zh/latest/writing/logging.html" alt="Python指南Logging"><br>日志更友好的了解程序运行中的信息或者错误信息，方便了解程序运行状态以及报错信息<br>如何使用logging模块？需要了解的内容：</p>
+<ul>
+<li>日志的级别</li>
+<li>关于日志的基本概念：记录器，处理器，过滤器，格式化器</li>
+<li>编写常规的日志需要的步骤</li>
+<li><p>日志的级别：日志分等级，设置好等级，比设置好的级别大的才能在显示</p>
+<ul>
+<li>DEBUG</li>
+<li>INFO</li>
+<li>WARN</li>
+<li>ERROR</li>
+<li>CRITICAL<br>默认日志名为root, 默认日志级别为WARN</li>
+</ul>
+</li>
+<li><p>在程序中配置日志存在三种方法：</p>
+<ul>
+<li>使用INI文件配置</li>
+<li>使用字典或者JSON配置</li>
+<li>在程序源代码中配置</li>
+<li><p>实例代码：</p>
+<pre><code>&apos;&apos;&apos;
+import logging
+
+logger = logging.getLogger(&quot;logger_name&quot;) # 记录器
+handler = logging.StreamHandler()  # 日志显示在控制台，还可以设置将日志信息输出为文本形式FileHandler()
+formatter = logging.Formatter(
+      &apos;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&apos;)
+
+handler.setFormatter(formatter) # 设置日志显示方式
+logger.addHandler(handler) # 添加处理器
+logger.setLevel(logging.DEBUG) # 设置日志级别
+logger.debug(&apos;often makes a very good meal of %s&apos;, &apos;visiting tourists&apos;) # 日志在程序中的使用
+&apos;&apos;&apos;
+</code></pre></li>
+<li><p>总结：</p>
+<pre><code>&apos;&apos;&apos;
+# 基本步骤，如下：
+
+# 创建logger
+logger = logging.getLogger(&quot;Your_logger_name&quot;)
+logger.setLevel(logging.DEBUG)
+
+# 创建handler
+logger_one = logging.StreamHandler()
+logger_one.setLevel(logging.INFO)
+
+# 创建Formatter
+formatter = logging.Formatter(&apos;%(asctime)s - %(name)s - %(levelname)s - %(message)s&apos;)
+
+# 配置Logger
+logger_one.setFormatter(formatter)
+logger.addHandler(logger_one)
+
+# 使用logger
+logger.info(&apos;info message&apos;)
+&apos;&apos;&apos;
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Excel模块:<br>Excel基本概念：<br>一个workbook 可以包含多个sheet, 一个sheet中包含更多的行列组成的表格</p>
+<ul>
+<li>Workbook : 工作簿</li>
+<li>sheet: 工作表</li>
+<li>cell: 单元格<br><img src="http://omfuwekil.bkt.clouddn.com/t_excel.jpg" alt="Excel"><br>如何通过程序来实现？步骤如下：</li>
+<li>实例化workbook</li>
+<li>添加sheet</li>
+<li>往单元格里面写入内容</li>
+<li>保存文件</li>
+<li><p>实例代码一：</p>
+<pre><code>&apos;&apos;&apos;
+# xlwt的基本使用就是往单元格中进行内容的写入
+import xlwt # 导入xlwt模块
+
+wb = xlwt.Workbook()
+ws.write(0, 0, 1234.56)  # 第一行第一列写入123.56
+ws.write(2, 0, 1)   # 第三行第一列写入 1
+ws.write(2, 1, 1)   # 第三行第二列写入 1
+ws.write(2, 2, xlwt.Formula(&quot;A3+B3&quot;))  # 第三行第三列是前面值之和
+
+wb.save(&apos;example.xls&apos;)  # 保存为文件名example.xls
+&apos;&apos;&apos;
+</code></pre></li>
+<li><p>实例代码二：</p>
+<pre><code>&apos;&apos;&apos;
+# 将mongodb数据库中的数据导入入excel中
+  &quot;&quot;&quot;
+  1.根据数据获取行和列数
+  2.先写入header信息
+  3.再两重循环写入内容值
+  &quot;&quot;&quot;
+
+from pymongo import MongoClient
+from xlwt import Workbook
+from xlwt import easyxf  # 可以定义字体，颜色等样式
+
+class MongoToXls(object):
+  def __init__(self, collection, name):
+      self.work_book = collection
+      self.sheet_name = name
+      self.wb = Workbook()
+      self.ws = [self.wb.add_sheet(one) for one in self.sheet_name]
+      self.style = easyxf(&quot;align: vert centre, horiz center&quot;)
+      pass
+  def info(self, number):
+      self.contents = list(self.work_book[number].find())
+      self.headers = [key for key in self.contents[0].keys()]
+      rows = len(self.contents)
+      columns = len(self.headers)
+      return rows, columns
+  def write_header(self, number):
+      ws = self.ws[number]
+      _, columns = self.info(number)
+      for i in range(0, columns):
+          ws.write(0, i, self.headers[i], style=self.style)
+  def write_content(self, number):
+      ws = self.ws[number]
+      rows, columns = self.info(number)
+      if rows &gt;= 65536:
+          rows = 65535
+      for j in range(1, rows + 1):
+          for k in range(0, columns):
+              ws.write(j, k, str(self.contents[j - 1][self.headers[k]]), style=self.style)
+  def save(self):
+      name = &quot;_&quot;.join(self.sheet_name) +&quot;2&quot;+ str(&quot;.xls&quot;)
+      self.wb.save(str(name))
+
+collection1 = MongoClient()[&quot;db5&quot;][&quot;base&quot;]
+collection2 = MongoClient()[&quot;db5&quot;][&quot;items&quot;]
+collection3 = MongoClient()[&quot;db5&quot;][&quot;values&quot;]
+collection = [collection1, collection2, collection3]
+name = [&quot;base&quot;, &quot;items&quot;, &quot;values&quot;]
+
+A = MongoToXls(collection=collection, name=name)
+for number in range(len(collection)):
+  print A.info(number)
+  A.write_header(number)
+  A.write_content(number)
+A.save()
+&apos;&apos;&apos;
+</code></pre></li>
+</ul>
+</li>
+<li><p>PDF模块:</p>
+<ul>
+<li>pdfminer模块可以将pdf信息转换为字符串信息</li>
+<li><p>实例代码：</p>
+<pre><code>&apos;&apos;&apos;
+# 读取本地pdf转化为字符串
+from cStringIO import StringIO
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+
+def convert_pdf_2_text(path):
+
+  rsrcmgr = PDFResourceManager()
+  retstr = StringIO()
+
+  device = TextConverter(rsrcmgr, retstr, codec=&apos;utf-8&apos;, laparams=LAParams())
+  interpreter = PDFPageInterpreter(rsrcmgr, device)
+
+  with open(path, &apos;rb&apos;) as fp:
+      for page in PDFPage.get_pages(fp, set()):
+          interpreter.process_page(page)
+      text = retstr.getvalue()
+
+      device.close()
+
+  device.close()
+  retstr.close()
+
+  return text
+
+# 将数据读入内存在进行处理
+url_data = requests.get(&quot;xxx.pdf&quot;).content
+data = StringIO(url_data)
+parser = PDFParser(data)
+document = PDFDocument(parser)
+rercmgr = PDFResourceManager(document)
+retstr = StringIO()
+laparams = LAParams()
+codec = &apos;utf-8&apos;
+device = TextConverter(rercmgr, retstr, codec=codec, laparams=laparams)
+interpreter = PDFPageInterpreter(rercmgr, device)
+  for page in PDFPage.create_pages(document):
+  interpreter.process_page(page)
+
+text = retstr.getvalue()# 返回的text 就能普通字符串的处理提取信息了。
+
+&apos;&apos;&apos;
+</code></pre></li>
+</ul>
+</li>
+<li><p>MD5处理：</p>
+<ul>
+<li><p>实例代码：</p>
+<pre><code>&apos;&apos;&apos;
+from hashlib
+
+md = hashlib.md5()
+md.update(&quot;字符串&quot;)
+md5.hexdigest()
+
+// 现在的问题是想要根据一个字典数据形成一个hash, 以使得可以判断字典数据没有完全一致的。
+
+str = (&quot;_&quot;.join(&quot;%s:%s&quot; % (key, value) for key, value in dict_item.items() if key not in (&quot;ct&quot;)) + &quot;_&quot; + str(number)).encode(&quot;utf-8&quot;)
+
+md5.update(str)
+md5.hexdigest()
+&apos;&apos;&apos;
+</code></pre></li>
+</ul>
+</li>
+<li><p>mongodb索引和聚合：</p>
+<ul>
+<li>目的：能够很好的对数据进行判重处理</li>
+<li><p>思路</p>
+<ul>
+<li>根据入库的数据进行生成md5值，将md5值设置为唯一索引值，完成了较好的去重操作</li>
+<li><p>步骤：</p>
+<ul>
+<li>索引<br>  ‘’’<br>  coll_values.create_index([(“md5_values”, pymongo.ASCENDING)], unique=True)<br>  ‘’’</li>
+<li>聚合操作：对mongodb数据中数据进行一些统计工作</li>
+<li>match</li>
+<li>group</li>
+<li>limit</li>
+<li>sort</li>
+<li><p>实例代码：</p>
+<pre><code>&apos;&apos;&apos;
+# 根据股票信息统计年份的数据数
+query = [
+{
+    &quot;$match&quot;: {&quot;key&quot;: code, &quot;year&quot;: year, &quot;type&quot;: type}
+},
+{
+    &quot;$group&quot;: {&quot;_id&quot;: {&quot;code&quot;: &quot;$key&quot;, &quot;year&quot;:&quot;$year&quot;}, &quot;total&quot;: {&quot;$sum&quot;:1}}
+}
+
+]
+total = []
+for code in [&quot;ACH&quot;, &quot;IKGH&quot;, &quot;ALN&quot;, &quot;AMCN&quot;, &quot;ATAI&quot;, &quot;AXN&quot;, &quot;ATV&quot;, &quot;BIDU&quot;, &quot;BITA&quot;, &quot;BORN&quot;, &quot;BSPM&quot;]:
+    for one in [&quot;2011&quot;, &apos;2012&apos;, &apos;2013&apos;, &apos;2014&apos;, &quot;2015&quot;]:
+    A = Count(code=code, year=one, type=&quot;Annual&quot;, factor=&quot;Income Statement&quot;)
+    result = A.aggregation()
+    total.append(list(result))
+print(total)
+&apos;&apos;&apos;
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        ﻿<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束<i class="fa fa-paw"></i>感谢阅读------</div>
+    
+</div>
+      
+    </div>
+	
+	
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/邮件处理/" <i class="fa fa-tag"></i> 邮件处理</a>
+          
+            <a href="/tags/日志模块/" <i class="fa fa-tag"></i> 日志模块</a>
+          
+            <a href="/tags/pdf处理/" <i class="fa fa-tag"></i> pdf处理</a>
+          
+            <a href="/tags/md5处理/" <i class="fa fa-tag"></i> md5处理</a>
+          
+            <a href="/tags/mongodb索引和聚合/" <i class="fa fa-tag"></i> mongodb索引和聚合</a>
+          
+            <a href="/tags/excel读写/" <i class="fa fa-tag"></i> excel读写</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/07/Activity生命周期简述/" rel="next" title="Activity生命周期简述">
+                <i class="fa fa-chevron-left"></i> Activity生命周期简述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/07/Python/"
+     data-title="Python常用模块处理"
+     data-content=""
+     data-url="https://github.com/Alexyzc/2017/03/07/Python/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/07/Python/"
+           data-title="Python常用模块处理" data-url="https://github.com/Alexyzc/2017/03/07/Python/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="风轻云淡" />
+          <p class="site-author-name" itemprop="name">风轻云淡</p>
+           
+              <p class="site-description motion-element" itemprop="description">Goals determine what you are going to be</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/u/a5eecd94fcc0" title="简书" target="_blank">简书</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、开篇"><span class="nav-number">1.</span> <span class="nav-text">一、开篇</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风轻云淡</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"Alexyzc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementById('footer')
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+</body>
+</html>
