@@ -95,9 +95,7 @@
 随机生成案件
 内容包括：身份证、手机号、微信号、QQ号、家庭住址、电子邮箱、性别等
 生成Json格式的案件
-可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N 
-示例核心代码：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474">
+可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="案件生成">
 <meta property="og:url" content="https://github.com/Alexyzc/2017/03/08/生成案件/index.html">
@@ -108,10 +106,8 @@
 随机生成案件
 内容包括：身份证、手机号、微信号、QQ号、家庭住址、电子邮箱、性别等
 生成Json格式的案件
-可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N 
-示例核心代码：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474">
-<meta property="og:updated_time" content="2017-03-08T15:14:50.286Z">
+可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N">
+<meta property="og:updated_time" content="2017-03-08T15:15:40.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="案件生成">
 <meta name="twitter:description" content="一、开篇
@@ -120,9 +116,7 @@
 随机生成案件
 内容包括：身份证、手机号、微信号、QQ号、家庭住址、电子邮箱、性别等
 生成Json格式的案件
-可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N 
-示例核心代码：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474">
+可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N">
 
 
 
@@ -423,7 +417,7 @@
 <li>随机生成案件</li>
 <li>内容包括：身份证、手机号、微信号、QQ号、家庭住址、电子邮箱、性别等</li>
 <li>生成Json格式的案件</li>
-<li>可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N </li>
+<li>可以生成jar包，随机生成N条案件，当前路径：java -jar jar包名称 N<a id="more"></a>  </li>
 <li><p>示例核心代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"> package com.cn.jetty.im;</div><div class="line"></div><div class="line"> import java.util.ArrayList;</div><div class="line"> import java.util.Map;</div><div class="line"> import com.cn.jetty.bean.in.CaseApplyListBean;</div><div class="line"> import com.cn.jetty.bean.in.CaseBean;</div><div class="line"> import com.cn.jetty.util.DateUtil;</div><div class="line"> import com.cn.jetty.util.FileUtil;</div><div class="line"> import com.cn.jetty.util.GeneratorData;</div><div class="line"> import com.cn.jetty.util.JsonUtil;</div><div class="line"> import com.cn.jetty.util.RandomValue;</div><div class="line"> import com.cn.jetty.util.dao.GeneratorDao;</div><div class="line"></div><div class="line"> public class OutCaseList &#123;</div><div class="line">public static void main(String[] args) &#123;</div><div class="line"></div><div class="line">	FileUtil f = new FileUtil();</div><div class="line">	GeneratorDao gd = new GeneratorDao();</div><div class="line">	int out = Integer.parseInt(args[0]); </div><div class="line">	ArrayList&lt;CaseBean&gt; arrcase = new ArrayList&lt;CaseBean&gt;();</div><div class="line">	for (int i = 0; i &lt; out  ;i++) &#123;</div><div class="line">		Map amt = GeneratorData.generatoramt();</div><div class="line">		CaseBean casebean = new CaseBean();</div><div class="line">		casebean.setLoanNo(GeneratorData.generatorCaseNo());</div><div class="line">		casebean.setName(RandomValue.getChineseName());</div><div class="line">		casebean.setId(GeneratorData.generatorId());</div><div class="line">		casebean.setIdAddr(RandomValue.getRoad());</div><div class="line">		if (RandomValue.getNum(0, 20) &gt; 10) &#123;</div><div class="line">			casebean.setGender(&quot;男&quot;);</div><div class="line">		&#125;else if(RandomValue.getNum(0, 20) &lt; 10) &#123;</div><div class="line">			casebean.setGender(&quot;女&quot;);</div><div class="line">		&#125;else &#123;</div><div class="line">			casebean.setGender(&quot;其它&quot;);</div><div class="line">		&#125;</div><div class="line">		casebean.setCaseAmt((String) amt.get(&quot;caseAmt&quot;));</div><div class="line">		casebean.setDebtAmt(amt.get(&quot;debtAmt&quot;).toString());</div><div class="line">		casebean.setOverdueAmt(amt.get(&quot;overdueAmt&quot;).toString());</div><div class="line">		casebean.setPenaltyInterest(amt.get(&quot;penaltyInterest&quot;).toString());</div><div class="line">		casebean.setApplyDate(amt.get(&quot;applyDate&quot;).toString());</div><div class="line">		casebean.setOverdueDate(amt.get(&quot;overdueDate&quot;).toString());</div><div class="line">		casebean.setLendingInstitution(&quot;xxxx&quot;);</div><div class="line">		casebean.setQqList(GeneratorData.generatorQqList());</div><div class="line">		casebean.setWechatList(GeneratorData.generatorQqList());</div><div class="line">		casebean.setPhoneList(GeneratorData.generatorPhoneBean());</div><div class="line">		casebean.setAddrList(GeneratorData.generatorAddressBean());</div><div class="line">		casebean.setSpecialCase(0);</div><div class="line">		casebean.setProductCode(&quot;APP2&quot;);</div><div class="line">		casebean.setAheadSettleAmt(amt.get(&quot;aheadSettleAmt&quot;).toString());</div><div class="line">		casebean.setEmail(RandomValue.getEmail(6, 9));</div><div class="line"></div><div class="line">		// System.out.println(JsonUtil.toJsonString(casebean));</div><div class="line">		// 插入t_case表中</div><div class="line">		gd.add(casebean);</div><div class="line">		arrcase.add(casebean);</div><div class="line">	&#125;		</div><div class="line">	CaseApplyListBean caselist = new CaseApplyListBean();</div><div class="line">	caselist.setCaseApplyBaseEntitys(arrcase);</div><div class="line">	System.out.println(JsonUtil.toJsonString(caselist));</div><div class="line">	String json = JsonUtil.toJsonString(caselist);</div><div class="line">	String filename =  &quot;MMD&quot; + DateUtil.currTime() + &quot;.case&quot;;</div><div class="line">	System.out.println(filename);</div><div class="line">	f.WriteFile(json,&quot;MMD_CASE&quot;, &quot;/&quot;+filename,&quot;UTF-8&quot;);	</div><div class="line">&#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 </li>
