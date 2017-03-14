@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,Loader层,Kernel层,Native层,FrameWork层,App层," />
+  <meta name="keywords" content="Jetty,Servlet,OutCaseList," />
 
 
 
@@ -89,22 +89,19 @@
 
 
 
-<meta name="description" content="一、开篇Android系统其底层基于Linux操作系统为基础，上层采用Java和Native层。它们是通过系统调用Syscall连通系统的内核空间和用户空间。
-二、Android架构系统启动流程
-Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;Native—&amp;gt;Framework—&amp;gt;App">
+<meta name="description" content="开篇
+在app测试过程中，基于不同的移动终端，其具有不同的属性，在测试过程中存在相同点，也存在不同的测试点，下面简单介绍下Android于iOS的区别。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android系统架构简述">
-<meta property="og:url" content="https://github.com/Alexyzc/2017/02/24/Android系统架构/index.html">
+<meta property="og:title" content="App测试中Android与iOS区别">
+<meta property="og:url" content="https://github.com/Alexyzc/2017/03/14/App测试中Android与iOS区别/index.html">
 <meta property="og:site_name" content="风轻云淡">
-<meta property="og:description" content="一、开篇Android系统其底层基于Linux操作系统为基础，上层采用Java和Native层。它们是通过系统调用Syscall连通系统的内核空间和用户空间。
-二、Android架构系统启动流程
-Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;Native—&amp;gt;Framework—&amp;gt;App">
-<meta property="og:updated_time" content="2017-02-24T09:35:58.111Z">
+<meta property="og:description" content="开篇
+在app测试过程中，基于不同的移动终端，其具有不同的属性，在测试过程中存在相同点，也存在不同的测试点，下面简单介绍下Android于iOS的区别。">
+<meta property="og:updated_time" content="2017-03-14T08:49:55.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android系统架构简述">
-<meta name="twitter:description" content="一、开篇Android系统其底层基于Linux操作系统为基础，上层采用Java和Native层。它们是通过系统调用Syscall连通系统的内核空间和用户空间。
-二、Android架构系统启动流程
-Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;Native—&amp;gt;Framework—&amp;gt;App">
+<meta name="twitter:title" content="App测试中Android与iOS区别">
+<meta name="twitter:description" content="开篇
+在app测试过程中，基于不同的移动终端，其具有不同的属性，在测试过程中存在相同点，也存在不同的测试点，下面简单介绍下Android于iOS的区别。">
 
 
 
@@ -132,13 +129,13 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
 
 
 
-  <link rel="canonical" href="https://github.com/Alexyzc/2017/02/24/Android系统架构/"/>
+  <link rel="canonical" href="https://github.com/Alexyzc/2017/03/14/App测试中Android与iOS区别/"/>
 
 
 
 
 
-  <title> Android系统架构简述 | 风轻云淡 </title>
+  <title> App测试中Android与iOS区别 | 风轻云淡 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +284,7 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://github.com/Alexyzc/2017/02/24/Android系统架构/">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Alexyzc/2017/03/14/App测试中Android与iOS区别/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="风轻云淡">
@@ -311,7 +308,7 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
             
             
               
-                Android系统架构简述
+                App测试中Android与iOS区别
               
             
           </h1>
@@ -326,8 +323,8 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-24T15:55:53+08:00">
-                2017-02-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T16:37:34+08:00">
+                2017-03-14
               </time>
             
 
@@ -349,8 +346,8 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/测试相关/" itemprop="url" rel="index">
+                    <span itemprop="name">测试相关</span>
                   </a>
                 </span>
 
@@ -367,8 +364,8 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/24/Android系统架构/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/24/Android系统架构/" itemprop="commentCount"></span>
+                <a href="/2017/03/14/App测试中Android与iOS区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/App测试中Android与iOS区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,47 +396,25 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
       
 
       
-        <h2 id="一、开篇"><a href="#一、开篇" class="headerlink" title="一、开篇"></a>一、开篇</h2><p>Android系统其底层基于Linux操作系统为基础，上层采用Java和Native层。它们是通过系统调用Syscall连通系统的内核空间和用户空间。</p>
-<h2 id="二、Android架构"><a href="#二、Android架构" class="headerlink" title="二、Android架构"></a>二、Android架构</h2><h4 id="系统启动流程"><a href="#系统启动流程" class="headerlink" title="系统启动流程"></a>系统启动流程</h4><blockquote>
-<p>Andorid系统启动过程：Loader—&gt;Kernel—&gt;Native—&gt;Native—&gt;Framework—&gt;App</p>
+        <h2 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h2><blockquote>
+<p>在app测试过程中，基于不同的移动终端，其具有不同的属性，在测试过程中存在相同点，也存在不同的测试点，下面简单介绍下Android于iOS的区别。</p>
 </blockquote>
 <a id="more"></a>
-<h5 id="Loader层？"><a href="#Loader层？" class="headerlink" title="Loader层？"></a>Loader层？</h5><ul>
-<li>Boot Rom:当手机处于关机状态时，长按Power键开机，引导芯片开始从固化在ROM里的预设出代码开始执行，然后加载引导程序到RAM；</li>
-<li>Boot Loader：这是启动Android系统之前的引导程序，主要是检查RAM，初始化硬件参数等功能。</li>
-</ul>
-<h5 id="Kernel层"><a href="#Kernel层" class="headerlink" title="Kernel层?"></a>Kernel层?</h5><ul>
-<li>启动Kernel的swapper进程(pid=0)：该进程又称为idle进程, 系统初始化过程Kernel由无到有开创的第一个进程, 用于初始化进程管理、内存管理，加载Display,Camera Driver，Binder Driver等相关工作；</li>
-<li>启动kthreadd进程（pid=2）：是Linux系统的内核进程，会创建内核工作线程kworkder，软中断线程ksoftirqd，thermal等内核守护进程。kthreadd进程是所有内核进程的鼻祖。</li>
-</ul>
-<h5 id="Native层"><a href="#Native层" class="headerlink" title="Native层"></a>Native层</h5><ul>
-<li>init进程会孵化出ueventd、logd、healthd、installd、adbd、lmkd等用户守护进程；</li>
-<li>init进程还启动servicemanager(binder服务管家)、bootanim(开机动画)等重要服务</li>
-<li>init进程孵化出Zygote进程，Zygote进程是Android系统的第一个Java进程，Zygote是所有Java进程的父进程，Zygote进程本身是由init进程孵化而来的。<blockquote>
-<p>Native层主要包括init孵化来的用户空间的守护进程、HAL层以及开机动画等。启动init进程(pid=1),是Linux系统的用户进程，init进程是所有用户进程的鼻祖</p>
-</blockquote>
-</li>
-</ul>
-<h6 id="Framework层"><a href="#Framework层" class="headerlink" title="Framework层"></a>Framework层</h6><ul>
-<li><p>Zygote进程，是由init进程通过解析init.rc文件后fork生成的，Zygote进程主要包含</p>
-<ul>
-<li>加载ZygoteInit类，注册Zygote Socket服务端套接字；</li>
-<li>加载虚拟机；</li>
-<li>preloadClasses；</li>
-<li>preloadResouces;</li>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><h5 id="App测试中Android与iOS区别"><a href="#App测试中Android与iOS区别" class="headerlink" title="App测试中Android与iOS区别"></a>App测试中Android与iOS区别</h5><ul>
+<li>Android长按home键呼出应用列表和切换应用，然后右滑则终止应用；</li>
+<li>多分辨率测试，Android端20多种，ios较少；</li>
+<li>手机操作系统，Android较多，ios较少且不能降级，只能单向升级；新的ios系统中的资源库不能完全兼容低版本中的ios系统中的应用，低版本ios系统中的应用调用了新的资源库，会直接导致闪退（Crash）；</li>
+<li>操作习惯：Android，Back键是否被重写，测试点击Back键后的反馈是否正确；应用数据从内存移动到SD卡后能否正常运行等；</li>
+<li>push测试：Android：点击home键，程序后台运行时，此时接收到push，点击后唤醒应用，此时是否可以正确跳转;ios，点击home键关闭程序和屏幕锁屏的情况（红点的显示）；</li>
+<li>安装卸载测试：Android的下载和安装的平台和工具和渠道比较多，ios主要有app store，iTunes和testflight下载；</li>
+<li>升级测试：可以被升级的必要条件：新旧版本具有相同的签名；新旧版本具有相同的包名；有一个标示符区分新旧版本（如版本号），对于Android若有内置的应用需检查升级之后内置文件是否匹配（如内置的输入法）,注意点：<ul>
+<li>并发（中断）测试：闹铃弹出框提示，另一个应用的启动、视频音频的播放，来电、用户正在输入等，语音、录音等的播放时强制其他正在播放的要暂停；</li>
+<li>数据来源的测试：输入，选择、复制、语音输入，安装不同输入法输入等；</li>
+<li>push（推送）测试：在开关机、待机状态下执行推送，消息先死及其推送跳转的正确性；应用在开发、未打开状态、应用启动且在后台运行的情况下是push显示和跳转否正确；推送消息阅读前后数字的变化是否正确；多条推送的合集的显示和跳转是否正确；</li>
+<li>分享跳转：分享后的文案是否正确；分享后跳转是否正确，显示的消息来源是否正确；</li>
+<li>触屏测试：同时触摸不同的位置或者同时进行不同操作，查看客户端的处理情况，是否会crash等 </li>
 </ul>
 </li>
-<li>System Server进程，是由Zygote进程fork而来，System Server是Zygote孵化的第一个进程，System Server负责启动和管理整个Java framework，包含ActivityManager，PowerManager等服务。</li>
-<li>Media Server进程，是由init进程fork而来，负责启动和管理整个C++ framework，包含AudioFlinger，Camera Service，等服务。</li>
-</ul>
-<h5 id="App层？"><a href="#App层？" class="headerlink" title="App层？"></a>App层？</h5><ul>
-<li>Zygote进程孵化出的第一个App进程是Launcher，这是用户看到的桌面App；</li>
-<li>Zygote进程还会创建Browser，Phone，Email等App进程，每个App至少运行在一个进程上</li>
-<li>所有的App进程都是由Zygote进程fork生成的</li>
-</ul>
-<h5 id="Syscall-amp-amp-JNI"><a href="#Syscall-amp-amp-JNI" class="headerlink" title="Syscall &amp;&amp; JNI?"></a>Syscall &amp;&amp; JNI?</h5><ul>
-<li>Native与Kernel之间有一层系统调用(SysCall)层</li>
-<li>Java层与Native(C/C++)层之间的纽带JNI</li>
 </ul>
 
       
@@ -475,17 +450,11 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" <i class="fa fa-tag"></i> Android</a>
+            <a href="/tags/Jetty/" <i class="fa fa-tag"></i> Jetty</a>
           
-            <a href="/tags/Loader层/" <i class="fa fa-tag"></i> Loader层</a>
+            <a href="/tags/Servlet/" <i class="fa fa-tag"></i> Servlet</a>
           
-            <a href="/tags/Kernel层/" <i class="fa fa-tag"></i> Kernel层</a>
-          
-            <a href="/tags/Native层/" <i class="fa fa-tag"></i> Native层</a>
-          
-            <a href="/tags/FrameWork层/" <i class="fa fa-tag"></i> FrameWork层</a>
-          
-            <a href="/tags/App层/" <i class="fa fa-tag"></i> App层</a>
+            <a href="/tags/OutCaseList/" <i class="fa fa-tag"></i> OutCaseList</a>
           
         </div>
       
@@ -498,8 +467,8 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/22/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/03/08/生成案件/" rel="next" title="案件生成">
+                <i class="fa fa-chevron-left"></i> 案件生成
               </a>
             
           </div>
@@ -507,10 +476,6 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/06/Java之封装思想/" rel="prev" title="Java之封装思想">
-                Java之封装思想 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,10 +490,10 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/24/Android系统架构/"
-     data-title="Android系统架构简述"
+        <div class="ds-share flat" data-thread-key="2017/03/14/App测试中Android与iOS区别/"
+     data-title="App测试中Android与iOS区别"
      data-content=""
-     data-url="https://github.com/Alexyzc/2017/02/24/Android系统架构/">
+     data-url="https://github.com/Alexyzc/2017/03/14/App测试中Android与iOS区别/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -558,8 +523,8 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/24/Android系统架构/"
-           data-title="Android系统架构简述" data-url="https://github.com/Alexyzc/2017/02/24/Android系统架构/">
+      <div class="ds-thread" data-thread-key="2017/03/14/App测试中Android与iOS区别/"
+           data-title="App测试中Android与iOS区别" data-url="https://github.com/Alexyzc/2017/03/14/App测试中Android与iOS区别/">
       </div>
     
   </div>
@@ -688,7 +653,7 @@ Andorid系统启动过程：Loader—&amp;gt;Kernel—&amp;gt;Native—&amp;gt;N
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、开篇"><span class="nav-number">1.</span> <span class="nav-text">一、开篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Android架构"><span class="nav-number">2.</span> <span class="nav-text">二、Android架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#系统启动流程"><span class="nav-number">2.0.1.</span> <span class="nav-text">系统启动流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Loader层？"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">Loader层？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Kernel层"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">Kernel层?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Native层"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">Native层</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Framework层"><span class="nav-number">2.0.1.3.1.</span> <span class="nav-text">Framework层</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#App层？"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">App层？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Syscall-amp-amp-JNI"><span class="nav-number">2.0.1.5.</span> <span class="nav-text">Syscall && JNI?</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开篇"><span class="nav-number">1.</span> <span class="nav-text">开篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">2.</span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#App测试中Android与iOS区别"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">App测试中Android与iOS区别</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

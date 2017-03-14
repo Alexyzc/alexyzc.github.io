@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Alexyzc/"/>
-  <updated>2017-03-08T15:15:40.350Z</updated>
+  <updated>2017-03-14T08:49:55.950Z</updated>
   <id>https://github.com/Alexyzc/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>App测试中Android与iOS区别</title>
+    <link href="https://github.com/Alexyzc/2017/03/14/App%E6%B5%8B%E8%AF%95%E4%B8%ADAndroid%E4%B8%8EiOS%E5%8C%BA%E5%88%AB/"/>
+    <id>https://github.com/Alexyzc/2017/03/14/App测试中Android与iOS区别/</id>
+    <published>2017-03-14T08:37:34.019Z</published>
+    <updated>2017-03-14T08:49:55.950Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h2><blockquote>
+<p>在app测试过程中，基于不同的移动终端，其具有不同的属性，在测试过程中存在相同点，也存在不同的测试点，下面简单介绍下Android于iOS的区别。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><h5 id="App测试中Android与iOS区别"><a href="#App测试中Android与iOS区别" class="headerlink" title="App测试中Android与iOS区别"></a>App测试中Android与iOS区别</h5><ul>
+<li>Android长按home键呼出应用列表和切换应用，然后右滑则终止应用；</li>
+<li>多分辨率测试，Android端20多种，ios较少；</li>
+<li>手机操作系统，Android较多，ios较少且不能降级，只能单向升级；新的ios系统中的资源库不能完全兼容低版本中的ios系统中的应用，低版本ios系统中的应用调用了新的资源库，会直接导致闪退（Crash）；</li>
+<li>操作习惯：Android，Back键是否被重写，测试点击Back键后的反馈是否正确；应用数据从内存移动到SD卡后能否正常运行等；</li>
+<li>push测试：Android：点击home键，程序后台运行时，此时接收到push，点击后唤醒应用，此时是否可以正确跳转;ios，点击home键关闭程序和屏幕锁屏的情况（红点的显示）；</li>
+<li>安装卸载测试：Android的下载和安装的平台和工具和渠道比较多，ios主要有app store，iTunes和testflight下载；</li>
+<li>升级测试：可以被升级的必要条件：新旧版本具有相同的签名；新旧版本具有相同的包名；有一个标示符区分新旧版本（如版本号），对于Android若有内置的应用需检查升级之后内置文件是否匹配（如内置的输入法）,注意点：<ul>
+<li>并发（中断）测试：闹铃弹出框提示，另一个应用的启动、视频音频的播放，来电、用户正在输入等，语音、录音等的播放时强制其他正在播放的要暂停；</li>
+<li>数据来源的测试：输入，选择、复制、语音输入，安装不同输入法输入等；</li>
+<li>push（推送）测试：在开关机、待机状态下执行推送，消息先死及其推送跳转的正确性；应用在开发、未打开状态、应用启动且在后台运行的情况下是push显示和跳转否正确；推送消息阅读前后数字的变化是否正确；多条推送的合集的显示和跳转是否正确；</li>
+<li>分享跳转：分享后的文案是否正确；分享后跳转是否正确，显示的消息来源是否正确；</li>
+<li>触屏测试：同时触摸不同的位置或者同时进行不同操作，查看客户端的处理情况，是否会crash等 </li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot; title=&quot;开篇&quot;&gt;&lt;/a&gt;开篇&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;在app测试过程中，基于不同的移动终端，其具有不同的属性，在测试过程中存在相同点，也存在不同的测试点，下面简单介绍下Android于iOS的区别。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="测试相关" scheme="https://github.com/Alexyzc/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="Jetty" scheme="https://github.com/Alexyzc/tags/Jetty/"/>
+    
+      <category term="Servlet" scheme="https://github.com/Alexyzc/tags/Servlet/"/>
+    
+      <category term="OutCaseList" scheme="https://github.com/Alexyzc/tags/OutCaseList/"/>
+    
+  </entry>
   
   <entry>
     <title>案件生成</title>
