@@ -101,7 +101,7 @@
 在日常测试、开发过程中，常用到Linux命令，熟练的掌握和使用这些命令可以提高工作效率，对问题的定位也起到事半功倍的效果。
 
 内容Linux路径篇12345678910111213141516/            # 表示根目录，是绝对路径./           # 表示当前目录，是相对路径../          # 表示上一级目录，是相对路径/root        # root用">
-<meta property="og:updated_time" content="2017-03-15T10:08:31.747Z">
+<meta property="og:updated_time" content="2017-03-20T07:40:24.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础命令总结">
 <meta name="twitter:description" content="开篇
@@ -460,7 +460,177 @@
 <li><p>cd用法</p>
 <ul>
 <li>功能描述：改变当前目录</li>
-<li>格式    ：cd 目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#回退到当前目录的上一级目录，并且借助pwd查看当前处于啥目录</div><div class="line">[root@localhost ~]# cd  ..</div><div class="line">[root@localhost /]# pwd</div><div class="line">/</div><div class="line">#回到当前用户的主目录，并且借助pwd查看是否回到主目录</div><div class="line">[root@localhost ~]# cd </div><div class="line">[root@localhost ~]# pwd</div><div class="line">/root</div><div class="line">#用绝对路径切换到alexyzc目录下</div><div class="line">[root@localhost alexyzc]# cd /home/alexyzc/</div><div class="line">[root@localhost alexyzc]# pwd</div><div class="line">/home/alexyzc</div><div class="line">#使用相对路径切换到当前目录的上一级的上一级目录下</div><div class="line">[root@localhost ~]# cd  ../../ </div><div class="line">[root@localhost ~]# pwd</div><div class="line">/</div></pre></td></tr></table></figure></li>
+<li>格式    ：cd 目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#回退到当前目录的上一级目录，并且借助pwd查看当前处于啥目录</div><div class="line">[root@localhost ~]# cd  ..</div><div class="line">[root@localhost /]# pwd</div><div class="line">/</div><div class="line">#回到当前用户的主目录，并且借助pwd查看是否回到主目录</div><div class="line">[root@localhost ~]# cd </div><div class="line">[root@localhost ~]# pwd</div><div class="line">/root</div><div class="line">#用绝对路径切换到alexyzc目录下</div><div class="line">[root@localhost alexyzc]# cd /home/alexyzc/</div><div class="line">[root@localhost alexyzc]# pwd</div><div class="line">/home/alexyzc</div><div class="line">#使用相对路径切换到当前目录的上一级的上一级目录下</div><div class="line">[root@localhost ~]# cd  ../../ </div><div class="line">[root@localhost ~]# pwd</div><div class="line">/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>mkdir&amp;rmdir用法</p>
+<ul>
+<li>功能：创建目录</li>
+<li>格式：mkdir[参数][目录名1][目录名2]<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#创建一个目录名为test</div><div class="line">[root@localhost ~]# mkdir test</div><div class="line"># 删除多个空目录</div><div class="line">[root@localhost ~]# rmdir bb cc dd #rmdir只能删除空文件夹，删除非空文件夹就会报错“rmdir: failed to remove `bb/&apos;: Directory not empty”</div><div class="line"># 删除非空文件夹命令</div><div class="line">[root@localhost ~]# rm -rf 文件名称</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>cp用法</p>
+<ul>
+<li>功能：拷贝文件或目录</li>
+<li>格式：cp[参数][源文件或目录][目标文件或目录]<br><a href="http://www.cnblogs.com/kerrycode/p/4235034.html" target="_blank" rel="external">cp命令总结</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#将当前文件testfile拷贝到绝对路径/home/alexyzc/下。并且命名为myfile</div><div class="line">[root@localhost Desktop]# ls</div><div class="line">testfile</div><div class="line">[root@localhost Desktop]# cp ./testfile /home/alexyzc/myfile</div><div class="line">[root@localhost Desktop]# ls /home/alexyzc/</div><div class="line">Desktop    Downloads  Music   Pictures  Templates  Videos</div><div class="line">Documents  hello      myfile  Public    testfile</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Mv用法</p>
+<ul>
+<li>功能：可以对文件或目录进行移动</li>
+<li>格式：mv[参数][源对象][目的对象]<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#将文件testfile移动到新的目录下并改名为newfile</div><div class="line">[root@localhost Desktop]# pwd</div><div class="line">/home/alexyzc/Desktop</div><div class="line">[root@localhost Desktop]# mv ./testfile ./bb/newfile</div><div class="line">[root@localhost Desktop]# ls</div><div class="line">bb</div><div class="line">[root@localhost Desktop]# cd bb/</div><div class="line">[root@localhost bb]# ls</div><div class="line">newfile</div><div class="line"># 将文件夹bb移动到新的目录下并更名为caca</div><div class="line">[root@localhost alexyzc]# mv ./Desktop/bb/ ./Downloads/caca </div><div class="line">[root@localhost alexyzc]# ls ./Downloads/</div><div class="line">caca</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>rm用法</p>
+<ul>
+<li>功能：删除文件或删除非空目录</li>
+<li>格式：rm [参数]文件或目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#当前目录下复制myfile文件重命名为11.txt/22.txt/33.tex</div><div class="line">[root@localhost alexyzc]# cp myfile 11.txt</div><div class="line">[root@localhost alexyzc]# ls</div><div class="line">11.txt   Documents  hello  myfile    Public     testfile</div><div class="line">Desktop  Downloads  Music  Pictures  Templates  Videos</div><div class="line">[root@localhost alexyzc]# cp myfile 22.txt</div><div class="line">[root@localhost alexyzc]# cp myfile 33.txt</div><div class="line">[root@localhost alexyzc]# ls</div><div class="line">11.txt  33.txt   Documents  hello  myfile    Public     testfile</div><div class="line">22.txt  Desktop  Downloads  Music  Pictures  Templates  Videos</div><div class="line">#删除当前文件下myfile文件</div><div class="line">[root@localhost alexyzc]# rm myfile</div><div class="line">#删除当前目录下hello目录，有提示</div><div class="line">[root@localhost alexyzc]# rm -r hello/</div><div class="line">rm: remove directory `hello&apos;? y</div><div class="line"># 删除当前目录下hello目录，不提示</div><div class="line">[root@localhost alexyzc]# rm -rf ./hello/</div><div class="line">[root@localhost alexyzc]# ls</div><div class="line">11.txt  33.txt   Documents  Music     Public     testfile</div><div class="line">22.txt  Desktop  Downloads  Pictures  Templates  Videos</div><div class="line"># 删除当前目录下多个文件</div><div class="line">[root@localhost alexyzc]# rm -r 11.txt 22.txt 33.txt</div><div class="line">rm: remove regular file `11.txt&apos;? y</div><div class="line">rm: remove regular file `22.txt&apos;? y</div><div class="line">rm: remove regular file `33.txt&apos;? y</div><div class="line">[root@localhost alexyzc]# ls</div><div class="line">Desktop    Downloads  Pictures  Templates  Videos</div><div class="line">Documents  Music      Public    testfile</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>chmod用法</p>
+<ul>
+<li>功能：修改文件权限</li>
+<li>格式：chmod [参数] 权限 文件或目录<br><a href="http://blog.csdn.net/u013510614/article/details/50323489" target="_blank" rel="external">chmod详解</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# chmod   611  hello   #使用数字表示法修改文件myfile的权限</div><div class="line">[root@localhost ~]# ls -l hello          #使用ls命令查看权限修改结果</div><div class="line">[root@localhost ~]# chmod   u=rwx hello  #使用文字表示法修改文件myfile的权限</div><div class="line">[root@localhost ~]# ls -l hello</div><div class="line">[root@localhost ~]# chmod   g+r    hello</div><div class="line">[root@localhost ~]# ls  -l hello</div><div class="line">[root@localhost ~]# chmod   o=r    hello</div><div class="line">[root@localhost ~]# ls  -l hello</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>chown用法</p>
+<ul>
+<li>功能：修改文件的属主（该例中的组wuxh需要替换为你系统中存在的组）</li>
+<li>格式：chown [参数] 用户名 文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# ls  -l hello          #先查看hello的属主信息</div><div class="line">[root@localhost ~]# chown  wuxh  hello    #把文件hello的属主修改为用户wuxh</div><div class="line">[root@localhost ~]# ls  -l hello          #看看属主信息是否修改</div><div class="line">[root@localhost ~]# chown  wuxh  dir2     #把目录dir2的属主修改为用户wuxh</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>chgrp用法</p>
+<ul>
+<li>功能：修改文件的所属组</li>
+<li>格式：chgrp [选项]  组名 文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# ls  -l hello          #执行之前先查看属主信息</div><div class="line">[root@localhost ~]#chgrp   wuxh hello     #把文件myfile的组修改为组wuxh</div><div class="line">[root@localhost ~]# ls -l  hello          #执行之后再查看属主信息</div><div class="line">[root@localhost ~]# chgrp   wuxh dir2     #把目录mydir的组修改为组wuxh</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>find用法</p>
+<ul>
+<li>功能：从指定的目录下开始查找某个文件</li>
+<li>格式：find  起始目录  寻找条件  文件名<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#     cd  /home/test</div><div class="line">[root@localhost ~]#     find  ./ -name  111.txt     #在当前目录及子目录中查找文件名为111.txt的文件</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>grep用法</p>
+<ul>
+<li>功能：从某个文件中查询指定的字符串</li>
+<li>格式：grep [选项]  [查找模式]  [ 文件名1，文件名2…]<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# grep‘bind’   hello           #从文件hello中查找字符串bind</div><div class="line">[root@localhost ~]# grep ‘[a-zA-Z0-9]ind’ hello                 </div><div class="line">按照正则表达式，查找以字符或者数字开头连接ind的行</div><div class="line">÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>echo用法</p>
+<ul>
+<li>功能：在显示屏上回显文字或者用来查看环境变量的值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#  echo“hello，boy”</div><div class="line">[root@localhost ~]#  echo $PATH</div><div class="line">÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>su用法</p>
+<ul>
+<li>功能：切换用户   注意su  与su - 的区别<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#使用普通用户登陆linux，执行ifconfig，这个命令在/sbin目录下</div><div class="line">[alexyzc@localhost Desktop]$ ipconfig</div><div class="line">bash: ipconfig: command not found                 #系统提示command not found</div><div class="line">#查看path的取值，是否有/sbin目录</div><div class="line">[alexyzc@localhost Desktop]$ echo $PATH</div><div class="line">/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/alexyzc/bin</div><div class="line">#用户切换为root</div><div class="line">[alexyzc@localhost Desktop]$ su root</div><div class="line">Password: </div><div class="line">[root@localhost Desktop]# ifconfig</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>clear用法</p>
+<ul>
+<li>功能：清屏<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# clear</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>man用法</p>
+<ul>
+<li>功能：联机帮助<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#   man  ps                          #查看ps命令的使用</div><div class="line">[root@localhost ~]#   man  date                        #查看date命令的使用</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>help用法</p>
+<ul>
+<li>功能：在线命令查看帮助<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# help  cd                         #查看cd命令的使用</div><div class="line">[root@localhost ~]# help  pwd                        #查看pwd命令的使用</div><div class="line">pwd: pwd [-LP]</div><div class="line">  Print the name of the current working directory.</div><div class="line">  </div><div class="line">  Options:</div><div class="line">    -L	print the value of $PWD if it names the current working</div><div class="line">  	directory</div><div class="line">    -P	print the physical directory, without any symbolic links</div><div class="line">  </div><div class="line">  By default, `pwd&apos; behaves as if `-L&apos; were specified.</div><div class="line">  </div><div class="line">  Exit Status:</div><div class="line">  Returns 0 unless an invalid option is given or the current directory</div><div class="line">  cannot be read.</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>whereis用法</p>
+<ul>
+<li>功能：查看命令的存放文职<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# whereis  cd</div><div class="line">[root@localhost ~]# whereis  pwd</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>id 用法</p>
+<ul>
+<li>功能：查看当前用户的uid、gid、groups<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# id</div><div class="line">uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>useradd与userdel</p>
+<ul>
+<li>功能：添加用户<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#  useradd  wang       #添加用户wang</div><div class="line">[root@localhost ~]#  useradd  zhang      #添加用户wang</div><div class="line">[root@localhost ~]#  ls  /home/          #查看/home目录下有什么信息</div><div class="line">[root@localhost ~]#  userdel   wang      #删除用户wang ，但不删除目录/home/wang</div><div class="line">[root@localhost ~]#  userdel  –r zhang   #删除用户wang，并删除目录/home/wang</div><div class="line">[root@localhost ~]#  ls  /home/          #查看以上操作有什么区别？</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>passwd用法</p>
+<ul>
+<li>功能：修改用户口令，注意，如果当前用户是root，该命令修改的将是root的口令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#  useradd  wang         #添加用户wang</div><div class="line">[root@localhost ~]#  passwd   wang           #修改用户wang的口令</div><div class="line">[root@localhost ~]#  passwd                  # 注意：这样修改的是当前用户的口令</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>groupadd 用法</p>
+<ul>
+<li>功能：添加组<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#   groupadd    manager           #添加组 manager</div><div class="line">[root@localhost ~]#   groupdel     manager          #删除组 manager</div><div class="line">[root@localhost ~]#   groupadd   manager            #添加组 manager     </div><div class="line">[root@localhost ~]#   gpasswd    manager            #设置组manager的密码</div><div class="line">[root@localhost ~]#    gpasswd  -r  manager         # 取消组manager的密码   </div><div class="line">[root@localhost ~]#    gpasswd  -A wang manager     #设置用户wang为manager组的管理员</div><div class="line">[root@localhost ~]#    gpasswd  -a  zhang manager   #添加用户zhang到组mananger</div><div class="line">[root@localhost ~]#    gpasswd  -d  zhang manager   #从组manager中删除用户zhang</div><div class="line">[root@localhost ~]#  groups                         #查看组的信息</div><div class="line">[root@localhost ~]#  newgrp                         #切换组</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>ps用法</p>
+<ul>
+<li>显示进程<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# ps  -ef             #显示当前系统中运行的进程</div><div class="line">[root@localhost ~]# ps  -ef|grep pid    #查询某个进程</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>top命令</p>
+<ul>
+<li>动态显示进程信息<br>[root@localhost ~]#  top</li>
+</ul>
+</li>
+<li><p>kill命令</p>
+<ul>
+<li>功能：将指定的进程杀死</li>
+<li>格式：kill -s 信号名称 pid / kill -n 36 pid<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# kill  -9  pid  #常用例子ps -ef |grep java ，kill -9 pid</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>tar命令</p>
+<ul>
+<li>功能：将文件或目录进行打包</li>
+<li>格式：tar[参数] 打包后的文件名 文件或目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# tar cvf test.tar /home/test     #把home下test目录打成tar包</div><div class="line">[root@localhost ~]# tar xvf test.tar                #把test.tar 解包</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>gzip命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# gzip test.tar            #把test.tar文件进行压缩</div><div class="line">[root@localhost ~]# gzip –d test.tar.gz      #把test.tar.gz压缩包解压缩</div></pre></td></tr></table></figure>
+</li>
+<li><p>rpm命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# rpm -ivh jdk-6u1-linux-i586.rpm   #安装该包</div><div class="line">[root@localhost ~]# rpm -e jdk-6u1-linux-i586       #卸载该包注意：没有.rpm</div><div class="line">[root@localhost ~]# rpm -qi jdk-6u1-linux-i586       #查看包信息,注意：没有.rpm</div><div class="line">[root@localhost ~]# rpm -ql jdk-6u1-linux-i586       #列出包内容,注意：没有.rpm</div></pre></td></tr></table></figure>
+</li>
+<li><p>ifconfig命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# ifconfig                        #功能：查看或者设置网络配置 </div><div class="line">[root@localhost ~]#  ifconfig  eth0 192.168.0.200   #功能：配置eth0的ip地址</div><div class="line">[root@localhost ~]#  ifconfig  eth0 down            #功能：禁用eth0网卡</div><div class="line">[root@localhost ~]#  ifconfig  eth0 up              #功能：启用eth0网卡</div><div class="line"></div><div class="line">*************************************************************************</div><div class="line">[root@localhost ~]# hostname         #功能：查看主机名称</div><div class="line">[root@localhost ~]# ping             #功能：查看网络上主机是否功能</div><div class="line">[root@localhost ~]# netstat          #功能：显示网络连接，路由表或者网络接口信息</div><div class="line">netstat    -n                        #显示所有已经建立的有效连接</div><div class="line">netstat    -a                        #显示所有有效连接，包括监听的一些连接</div><div class="line">netstat    -s                        #按照各协议显示统计数据</div></pre></td></tr></table></figure>
+</li>
+<li><p>route命令</p>
+<ul>
+<li>功能：添加路由和查看路由信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#route   add   -net192.168.11.0  netmask 255.255.255.0 eth0</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>netconfig命令</p>
+<ul>
+<li>功能:实现网络的配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]#netconfig</div><div class="line">[root@localhost ~]#service   network   restart</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -520,6 +690,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/20/SpringMVC简介/" rel="prev" title="SpringMVC����">
+                SpringMVC���� <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -617,7 +791,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -626,7 +800,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -635,7 +809,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
