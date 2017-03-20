@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Alexyzc/"/>
-  <updated>2017-03-20T09:07:04.651Z</updated>
+  <updated>2017-03-20T09:09:06.838Z</updated>
   <id>https://github.com/Alexyzc/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://github.com/Alexyzc/2017/03/20/SpringMVC%E7%AE%80%E4%BB%8B/"/>
     <id>https://github.com/Alexyzc/2017/03/20/SpringMVC简介/</id>
     <published>2017-03-20T03:24:02.424Z</published>
-    <updated>2017-03-20T09:07:04.651Z</updated>
+    <updated>2017-03-20T09:09:06.838Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Web-MVC简介"><a href="#Web-MVC简介" class="headerlink" title="Web MVC简介"></a>Web MVC简介</h2><h3 id="web开发中的请求-响应模型"><a href="#web开发中的请求-响应模型" class="headerlink" title="web开发中的请求-响应模型"></a>web开发中的请求-响应模型</h3><p>web开发时的请求/响应模型<br>                        <img src="http://omfuwekil.bkt.clouddn.com/web.png" alt="Web"><br>Web项目中从客户端到服务器数据传输的具体的步骤如下：</p>
+    <content type="html"><![CDATA[<h2 id="Web-MVC简介"><a href="#Web-MVC简介" class="headerlink" title="Web MVC简介"></a>Web MVC简介</h2><h3 id="web开发中的请求-响应模型"><a href="#web开发中的请求-响应模型" class="headerlink" title="web开发中的请求-响应模型"></a>web开发中的请求-响应模型</h3><a id="more"></a> 
+<p>web开发时的请求/响应模型<br>                        <img src="http://omfuwekil.bkt.clouddn.com/web.png" alt="Web"><br>Web项目中从客户端到服务器数据传输的具体的步骤如下：</p>
 <ul>
 <li>Web浏览器(如：firfox)发起请求，如访问<a href="https://www.baidu.com/" target="_blank" rel="external">https://www.baidu.com/</a></li>
 <li>Web服务器（如：Tomcat）接收请求，处理请求（比如新增用户，则将用户保存一下），最后产生响应（一般为html或json等）</li>
@@ -48,7 +49,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Web-MVC简介&quot;&gt;&lt;a href=&quot;#Web-MVC简介&quot; class=&quot;headerlink&quot; title=&quot;Web MVC简介&quot;&gt;&lt;/a&gt;Web MVC简介&lt;/h2&gt;&lt;h3 id=&quot;web开发中的请求-响应模型&quot;&gt;&lt;a href=&quot;#web开发中的请求-响
+      &lt;h2 id=&quot;Web-MVC简介&quot;&gt;&lt;a href=&quot;#Web-MVC简介&quot; class=&quot;headerlink&quot; title=&quot;Web MVC简介&quot;&gt;&lt;/a&gt;Web MVC简介&lt;/h2&gt;&lt;h3 id=&quot;web开发中的请求-响应模型&quot;&gt;&lt;a href=&quot;#web开发中的请求-响应模型&quot; class=&quot;headerlink&quot; title=&quot;web开发中的请求-响应模型&quot;&gt;&lt;/a&gt;web开发中的请求-响应模型&lt;/h3&gt;
     
     </summary>
     
@@ -360,9 +361,9 @@
       <category term="测试相关" scheme="https://github.com/Alexyzc/categories/%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3/"/>
     
     
-      <category term="Android" scheme="https://github.com/Alexyzc/tags/Android/"/>
-    
       <category term="App" scheme="https://github.com/Alexyzc/tags/App/"/>
+    
+      <category term="Android" scheme="https://github.com/Alexyzc/tags/Android/"/>
     
       <category term="iOS" scheme="https://github.com/Alexyzc/tags/iOS/"/>
     
