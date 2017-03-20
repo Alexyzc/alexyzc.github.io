@@ -308,7 +308,7 @@
               
                 
                 <a class="post-title-link" href="/2017/03/20/SpringMVC简介/" itemprop="url">
-                  SpringMVC����
+                  SpringMVC简介
                 </a>
               
             
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringMVCѧϰ��¼/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringMVCѧϰ��¼</span>
+                  <a href="/categories/SpringMVC学习记录/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringMVC学习记录</span>
                   </a>
                 </span>
 
@@ -394,7 +394,29 @@
       
         
           
-            <h2 id="��ƪ"><a href="#��ƪ" class="headerlink" title="��ƪ"></a>��ƪ</h2>
+            <h2 id="Web-MVC简介"><a href="#Web-MVC简介" class="headerlink" title="Web MVC简介"></a>Web MVC简介</h2><h3 id="web开发中的请求-响应模型"><a href="#web开发中的请求-响应模型" class="headerlink" title="web开发中的请求-响应模型"></a>web开发中的请求-响应模型</h3><p>web开发时的请求/响应模型<br>                        <img src="http://omfuwekil.bkt.clouddn.com/web.png" alt="Web"><br>Web项目中从客户端到服务器数据传输的具体的步骤如下：</p>
+<ul>
+<li>Web浏览器(如：firfox)发起请求，如访问<a href="https://www.baidu.com/" target="_blank" rel="external">https://www.baidu.com/</a></li>
+<li>Web服务器（如：Tomcat）接收请求，处理请求（比如新增用户，则将用户保存一下），最后产生响应（一般为html或json等）</li>
+<li>Web服务器处理完成后，返回内容给Web客户端，客户端对接收的内容进行处理（如：浏览器客户端对接收到的响应内容进行渲染以及展示）<blockquote>
+<p>由上述的模型可知，Web开发中Web客户端发起请求，Web服务器接收、处理并产生响应。一般Web服务器是不能主动通知Web客户端更新内容，不排除服务器的自动推送或HTML5 websocket客户端实现Web服务器主动通知Web客户端等</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="标准的MVC模型概述"><a href="#标准的MVC模型概述" class="headerlink" title="标准的MVC模型概述"></a>标准的MVC模型概述</h3><p>MVC模型，是一种架构型的模式，本身不引入新功能，只是帮助我们将开发中的结构组织的更加合理，使暂时与模型分离、流程控制逻辑、业务逻辑调用与展示逻辑分离<br>                        <img src="http://omfuwekil.bkt.clouddn.com/baseic_mvc.png" alt="baseic_mvc"></p>
+<h4 id="什么是MVC（Model-View-Controller）三元组？"><a href="#什么是MVC（Model-View-Controller）三元组？" class="headerlink" title="什么是MVC（Model-View-Controller）三元组？"></a>什么是MVC（Model-View-Controller）三元组？</h4><ul>
+<li>Model（模型）：数据模型，提供要展示的数据，因此包含数据和行为，可以认为是领域模型或JavaBean组间（包含数据和行为）。它可分离成：Value Object（数据）和服务层（行为）。也就是模型提供了模型数据查询和模型数据的状态更新等功能，包括数据和业务。</li>
+<li>View（视图）：负责进行模型的展示，一般情况下就是我们所见的用户界面，客户端想看到的内容</li>
+<li>Controller（控制器）：接收用户请求，委托给模型进行处理（状态改变），处理完毕后把返回的模型数据返回给视图，由视图负责展示。其实，控制器做了个调度员的工作。</li>
+</ul>
+<blockquote>
+<p>从web开发开发的请求/响应模型图看到，在标准的mvc中模型能主动推数据给视图进行更新（观察者设计模式，在模型上注册视图，当模型更新时自动更新视图），但在Web开发中模型是无法主动推给视图（无法主动更新用户界面），，因为在Web开发是请求-响应模型。</p>
+</blockquote>
+<h3 id="Web-MVC概述"><a href="#Web-MVC概述" class="headerlink" title="Web MVC概述"></a>Web MVC概述</h3><p>模型-视图-控制器概念和标准的MVC一样，请参考上图，接下来先看下Web MVC标准架构图，如图：<br>                         <img src="http://omfuwekil.bkt.clouddn.com/web_mvc.png" alt="web_mvc"></p>
+<blockquote>
+<p>在Web MVC模式下，模型无法主动推送数据给视图，如果用户想要视图更新，需要再发送一次请求（既请求-响应模型）</p>
+</blockquote>
+
           
         
       
